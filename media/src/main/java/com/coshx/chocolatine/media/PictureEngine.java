@@ -15,7 +15,7 @@ import java.io.IOException;
  * @brief
  */
 public class PictureEngine {
-    public final static int ORIENTATION_DEFAULT_VALUE = -1;
+    private final static int ORIENTATION_DEFAULT_VALUE = -1;
 
     public enum Compression {
         NO_COMPRESSION(100),
