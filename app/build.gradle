@@ -24,4 +24,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile project(':base')
     compile project(':media')
+    compile project(':content')
 }
