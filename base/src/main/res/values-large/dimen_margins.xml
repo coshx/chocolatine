@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="layout_margin">32dp</dimen>
+    <dimen name="horizontal_layout_margin">@dimen/layout_margin</dimen>
+    <dimen name="vertical_layout_margin">@dimen/layout_margin</dimen>
+</resources>
