@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="h1">45sp</dimen>
-    <dimen name="h2">40sp</dimen>
-    <dimen name="h3">35sp</dimen>
-    <dimen name="h4">30sp</dimen>
-    <dimen name="h5">25sp</dimen>
-    <dimen name="h6">20sp</dimen>
-    <dimen name="p">18sp</dimen>
+    <dimen name="display4">112sp</dimen>
+    <dimen name="display3">56sp</dimen>
+    <dimen name="display2">45sp</dimen>
+    <dimen name="display1">34sp</dimen>
+
+    <dimen name="headline">24sp</dimen>
+    <dimen name="title">20sp</dimen>
+    <dimen name="subhead">16sp</dimen>
+    <dimen name="body">14sp</dimen>
+    <dimen name="caption">12sp</dimen>
+    <dimen name="button">14sp</dimen>
 </resources>
