@@ -32,7 +32,7 @@ public class Promise<T> implements IPromise {
     }
 
     public static class Builder {
-        static <U> Pair<Promise<U>, Trigger<U>> build() {
+        public static <U> Pair<Promise<U>, Trigger<U>> build() {
             Promise<U> p = new Promise<>();
 
             return new Pair<>(p, new Trigger<>(p));
