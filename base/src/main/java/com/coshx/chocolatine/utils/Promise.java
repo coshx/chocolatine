@@ -3,6 +3,7 @@ package com.coshx.chocolatine.utils;
 import android.util.Pair;
 
 import com.coshx.chocolatine.utils.actions.Action;
+import com.coshx.chocolatine.utils.actions.Action0;
 
 import java.lang.ref.WeakReference;
 
@@ -19,14 +20,21 @@ public class Promise<T> implements IPromise {
             this.parent = new WeakReference<Promise<U>>(parent);
         }
 
-        public void onSuccess(U u) {
-            Promise<U> p = this.parent.get();
-            if (p != null && p.isValid) {
-                synchronized (p.invalidationLock) {
-                    if (p.isValid) {
-                        p.onSuccessfulAction.run(u);
+        public void onSuccess(final U u) {
+            Promise<U> p1 = this.parent.get();
+
+            if (p1 != null && p1.isValid) {
+                Action0 action = new Action0() {
+                    @Override
+                    public void run() {
+                        Promise<U> p2 = Trigger.this.parent.get();
+                        synchronized (p2.invalidationLock) {
+                            if (p2.isValid) {
+                                p2.onSuccessAction.run(u);
+                            }
+                        }
                     }
-                }
+                };
             }
         }
     }
@@ -41,15 +49,25 @@ public class Promise<T> implements IPromise {
 
     private Object invalidationLock = new Object();
 
-    private Action<T> onSuccessfulAction;
-    private boolean   isValid;
+    private boolean isValid;
+
+    private Action<T> onSuccessAction;
+    private boolean   runOnSuccessOnMain;
 
     private Promise() {
         isValid = true;
+        runOnSuccessOnMain = true;
     }
 
     public Promise<T> onSuccess(Action<T> action) {
-        onSuccessfulAction = action;
+        onSuccessAction = action;
+        runOnSuccessOnMain = true;
+        return this;
+    }
+
+    public Promise<T> onSuccessInBackground(Action<T> action) {
+        onSuccessAction = action;
+        runOnSuccessOnMain = false;
         return this;
     }
 
