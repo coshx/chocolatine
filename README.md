@@ -22,7 +22,7 @@ Then, add this dependency to your module:
 
 ```groovy
 dependencies {
-    compile 'com.github.coshx:chocolatine:v0.1.1'
+    compile 'com.github.coshx:chocolatine:v0.3.0'
 }
 ```
 
