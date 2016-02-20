@@ -47,7 +47,7 @@ public class Duration {
     }
 
     public double toSeconds() {
-        return milliseconds / 1000;
+        return toMilliseconds() / 1000;
     }
 
     public long toTimer() {
