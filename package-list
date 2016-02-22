@@ -1,4 +1,5 @@
 com.coshx.chocolatine.helpers
+com.coshx.chocolatine.promises
 com.coshx.chocolatine.utils
 com.coshx.chocolatine.utils.actions
 com.coshx.chocolatine.utils.funcs
