@@ -1,4 +1,4 @@
-package com.coshx.chocolatine.utils;
+package com.coshx.chocolatine.promises;
 
 /**
  * IPromise
